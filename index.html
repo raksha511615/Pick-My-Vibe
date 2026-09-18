@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pick My Vibe 🎀</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MAIN TITLE -->
+
+    <h1>Pick My Vibe 🎀</h1>
+
+    <!-- WELCOME CARD -->
+
+    <div class="welcome-card">
+
+        <div class="welcome-icon">🎀</div>
+
+        <h2>Ready to discover your vibe?</h2>
+
+        <p>
+            Answer 3 fun questions and find out your unique
+            main character personality! ✨
+        </p>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress-container">
+        <div id="progressBar"></div>
+    </div>
+
+    <p id="progressText">Question 1 of 3 🌸</p>
+
+
+    <!-- QUESTION 1 -->
+
+    <div id="question1" class="question-card">
+
+        <h2>What's your perfect weekend? 🌸</h2>
+
+        <button onclick="chooseFirstVibe('Staying home 🧸')">
+            Staying home 🧸
+        </button>
+
+        <button onclick="chooseFirstVibe('Going out 💃')">
+            Going out 💃
+        </button>
+
+        <button onclick="chooseFirstVibe('Beach day 🌊')">
+            Beach day 🌊
+        </button>
+
+        <button onclick="chooseFirstVibe('Shopping 🛍️')">
+            Shopping 🛍️
+        </button>
+
+    </div>
+
+
+    <!-- QUESTION 2 -->
+
+    <div id="question2" class="question-card">
+
+        <h2>What's your favorite outfit vibe? 👗</h2>
+
+        <button onclick="chooseSecondVibe('Cute & girly 🎀')">
+            Cute & girly 🎀
+        </button>
+
+        <button onclick="chooseSecondVibe('Classy & stylish ✨')">
+            Classy & stylish ✨
+        </button>
+
+        <button onclick="chooseSecondVibe('Comfy & sporty 👟')">
+            Comfy & sporty 👟
+        </button>
+
+        <button onclick="chooseSecondVibe('Flowy & aesthetic 🌷')">
+            Flowy & aesthetic 🌷
+        </button>
+
+    </div>
+
+
+    <!-- QUESTION 3 -->
+
+    <div id="question3" class="question-card">
+
+        <h2>What's your dream plan? ✨</h2>
+
+        <button onclick="chooseThirdVibe('Movie night 🍿')">
+            Movie night 🍿
+        </button>
+
+        <button onclick="chooseThirdVibe('Cafe date ☕')">
+            Cafe date ☕
+        </button>
+
+        <button onclick="chooseThirdVibe('Travel adventure ✈️')">
+            Travel adventure ✈️
+        </button>
+
+        <button onclick="chooseThirdVibe('Luxury day 💎')">
+            Luxury day 💎
+        </button>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div id="result"></div>
+
+
+    <!-- QUIZ BUTTONS -->
+
+    <div id="reveal">
+
+        <button id="revealButton" onclick="showResult()">
+            ✨ Reveal My Vibe ✨
+        </button>
+
+        <button id="restartButton" onclick="restartQuiz()">
+            🔄 Try Again
+        </button>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <section class="about">
+
+        <h2>💗 About Pick My Vibe</h2>
+
+        <p>
+            Pick My Vibe is a fun personality quiz designed to discover
+            your unique main character vibe based on your choices.
+        </p>
+
+        <p>
+            ✨ Choose your answers, reveal your vibe, and have fun!
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>💗 Pick My Vibe 🎀</p>
+
+        <span>Made with love, smiles & good vibes ✨</span>
+
+        <div class="creator">
+    With love, Raksha 💗
+</div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

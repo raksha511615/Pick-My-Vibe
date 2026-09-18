@@ -1,0 +1,697 @@
+/* =========================================
+   PICK MY VIBE 🎀
+   Final Professional Stylesheet
+========================================= */
+
+
+/* ---------- GENERAL ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 45px 20px 25px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 182, 213, 0.45),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(255, 210, 230, 0.5),
+            transparent 25%
+        ),
+        linear-gradient(135deg, #ffe6f2, #fff7fb);
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+    overflow-x: hidden;
+
+    animation: pageLoad 0.8s ease;
+}
+
+
+/* ---------- FLOATING HEARTS ---------- */
+
+body::before,
+body::after {
+    content: "💗  💕  ✨  💕  💗";
+
+    position: fixed;
+
+    font-size: 28px;
+    opacity: 0.35;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    left: 3%;
+    top: 20%;
+
+    animation: floatHearts 6s ease-in-out infinite;
+}
+
+body::after {
+    right: 3%;
+    top: 55%;
+
+    animation: floatHearts 7s ease-in-out infinite reverse;
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+body > h1 {
+    margin: 10px 0 5px;
+
+    color: #d63384;
+    font-size: 44px;
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 4px 12px rgba(214, 51, 132, 0.15);
+}
+
+h2 {
+    color: #b0306a;
+}
+
+
+/* ---------- WELCOME CARD ---------- */
+
+.welcome-card {
+    max-width: 520px;
+
+    margin: 25px auto 30px;
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 2px solid #ffd1e3;
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(214, 51, 132, 0.12);
+
+    animation: welcomeAppear 0.8s ease;
+}
+
+.welcome-icon {
+    font-size: 35px;
+}
+
+.welcome-card h2 {
+    margin-top: 10px;
+    color: #d63384;
+}
+
+.welcome-card p {
+    margin-bottom: 5px;
+
+    color: #777;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* ---------- PROGRESS ---------- */
+
+.progress-container {
+    width: 80%;
+    max-width: 500px;
+    height: 14px;
+
+    margin: 25px auto 10px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #ffd1e3;
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 12px rgba(214, 51, 132, 0.1);
+}
+
+#progressBar {
+    width: 33.33%;
+    height: 100%;
+
+    position: relative;
+
+    background: linear-gradient(
+        90deg,
+        #ff9ac2,
+        #d63384
+    );
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: width 0.5s ease;
+}
+
+#progressBar::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -50%;
+
+    width: 50%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    transform: skewX(-20deg);
+
+    animation: progressShine 2.5s infinite;
+}
+
+#progressText {
+    margin-top: 8px;
+
+    color: #d63384;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* ---------- QUESTION CARDS ---------- */
+
+.question-card {
+    max-width: 650px;
+
+    margin: 25px auto;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 2px solid #ffd1e3;
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 25px rgba(214, 51, 132, 0.12);
+
+    animation: questionAppear 0.5s ease;
+}
+
+#question2,
+#question3 {
+    display: none;
+}
+
+.question-card h2 {
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+button {
+    position: relative;
+
+    margin: 8px;
+    padding: 12px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #fff0f7
+    );
+
+    color: #d63384;
+
+    border: 2px solid #ff9ac2;
+    border-radius: 20px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(
+        135deg,
+        #ffb6d5,
+        #d63384
+    );
+
+    color: white;
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+        0 6px 15px rgba(214, 51, 132, 0.2);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(214, 51, 132, 0.25);
+    outline-offset: 3px;
+}
+
+
+/* ---------- QUESTION ANSWER BUTTONS ---------- */
+
+.question-card button {
+    min-width: 220px;
+    overflow: hidden;
+}
+
+.question-card button::after {
+    content: "♡";
+
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    color: #d63384;
+    font-size: 20px;
+
+    transform:
+        translateY(-50%)
+        scale(0);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.question-card button:hover::after {
+    transform:
+        translateY(-50%)
+        scale(1);
+}
+
+
+/* ---------- RESULT ---------- */
+
+#result {
+    display: none;
+
+    position: relative;
+
+    width: 80%;
+    max-width: 520px;
+
+    margin: 35px auto 20px;
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff0f7
+        );
+
+    border: 2px solid #ffc1dc;
+    border-radius: 30px;
+
+    box-shadow:
+        0 12px 30px rgba(214, 51, 132, 0.18);
+}
+
+#result h1 {
+    margin: 20px 0;
+
+    color: #d63384;
+    font-size: 34px;
+}
+
+#result h2 {
+    margin-top: 15px;
+
+    color: #b0306a;
+}
+
+#result p {
+    margin: 10px 0;
+    padding: 12px;
+
+    background: white;
+
+    border: 1px solid #ffd1e3;
+    border-radius: 18px;
+
+    color: #777;
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+#result p:hover {
+    transform: scale(1.03);
+}
+
+.vibe-description {
+    line-height: 1.6;
+}
+
+
+/* ---------- VIBE BADGE ---------- */
+
+.vibe-badge {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb6d5,
+            #d63384
+        );
+
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 5px 12px rgba(214, 51, 132, 0.2);
+
+    animation: badgePop 0.6s ease;
+}
+
+
+/* ---------- QUIZ BUTTON AREA ---------- */
+
+#reveal {
+    display: none;
+
+    margin: 20px auto;
+}
+
+#revealButton {
+    background:
+        linear-gradient(
+            135deg,
+            #ff9ac2,
+            #d63384
+        );
+
+    color: white;
+
+    border: none;
+
+    font-weight: bold;
+
+    padding: 14px 28px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 6px 18px rgba(214, 51, 132, 0.25);
+}
+
+#revealButton:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #d63384,
+            #b0306a
+        );
+
+    transform:
+        translateY(-3px)
+        scale(1.05);
+}
+
+#restartButton {
+    display: none;
+
+    background: white;
+
+    color: #d63384;
+
+    border: 2px solid #ff9ac2;
+
+    font-weight: bold;
+
+    padding: 13px 25px;
+
+    border-radius: 25px;
+}
+
+#restartButton:hover {
+    background: #fff0f7;
+
+    color: #b0306a;
+}
+
+
+/* ---------- ABOUT SECTION ---------- */
+
+.about {
+    max-width: 650px;
+
+    margin: 70px auto 20px;
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 2px solid #ffd1e3;
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 20px rgba(214, 51, 132, 0.12);
+}
+
+.about h2 {
+    margin-top: 0;
+}
+
+.about p {
+    color: #777;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    margin: 45px auto 15px;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.footer p {
+    margin: 5px;
+
+    color: #d63384;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer span {
+    color: #a66b87;
+    font-size: 14px;
+}
+
+
+/* ---------- CUTE CREATOR SIGNATURE ---------- 
+.creator {
+    margin-top: 18px;
+    color: #d63384 !important;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+    text-shadow:
+        0 3px 8px rgba(214, 51, 132, 0.18);
+
+    transform: rotate(-2deg);
+}
+
+
+/* ---------- ANIMATIONS ---------- *
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes welcomeAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes questionAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes resultAppear {
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes badgePop {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes progressShine {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 120%;
+    }
+}
+
+@keyframes floatHearts {
+    0% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(5deg);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+}
+
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+.creator {
+    color: #d63384 !important;
+}
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    body > h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .welcome-card {
+        padding: 20px;
+    }
+
+    .question-card {
+        padding: 22px 15px;
+    }
+
+    .question-card button {
+        display: block;
+
+        width: 90%;
+        max-width: 350px;
+
+        margin: 12px auto;
+
+        padding: 14px 15px;
+    }
+
+    .progress-container {
+        width: 90%;
+    }
+
+    #result {
+        width: 90%;
+        padding: 22px 18px;
+    }
+
+    #result h1 {
+        font-size: 27px;
+    }
+
+    .about {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .creator {
+        font-size: 24px;
+    }
+}
